@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar 17 09:18:10 2023
+
+@author: Administrator
+"""
+
+#Cau 1
+import numpy as np
+n = int(input("Nhap so phan tu cua mang :"))
+r = np.random.randint(low = 1 , high = 50 , size = n)
+print(r)
+
+#Max,Min,Trung Binh
+print("Tong cua ma tran =",np.sum(r))
+print("Gia tri lon nhat cua ma tran =",np.max(r))
+print("Gia tri nho nhat cua ma tran =",np.min(r))
+print("Gia tri trung binh cua ma tran =",np.max(r))
+
+#Tim gia tri chan lon nhat va vi tri trong mang
+r1 = np.array(list(filter(lambda so:so%2==0,r)))
+print("Cac phan tu chan co trong mang =",r1)
+m = r1.max()
+print("gia tri chan lon nhat trong mang =",r1.max())
+vt = np.where(r==m)
+print("Vi tri cua phan tu chan lon nhat trong mang =",vt[0])
+
+#Them phan tu x vao cuoi cung
+x = int(input("Nhap phan tu can them:"))
+r = np.append(r, x)
+print("Mang sai khi thay doi: \n",r)
+
+
+#Xoa phan tu khoi mang
+y = int(input("Nhap phan tu can xoa:"))
+vts = np.where(r==y)
+r = np.delete(r,vts[0])
+print("Mang sau khi xoa : \n",r)
+
+#Xap xep mang tang dan
+r.sort()
+print("Mang sau khi xap xep tang dan:\n",r)
+
+
+#Tao mang moi chua tat cac ca so le trong mang va xap xep giam dan
+print("\n Tao mang le va xap xep giam dan:")
+r3 = list(filter(lambda x : x%2!=0,r))
+r2 = np.array(r3)
+r2[::-1].sort()
+print(r25)
